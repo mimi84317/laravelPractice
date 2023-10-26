@@ -1,7 +1,7 @@
 <script>
     let user = "User";
 </script>
-<p>hello</p>
+<p>hello { user }</p>
 <style>
 
 </style>
