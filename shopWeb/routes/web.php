@@ -18,6 +18,6 @@ Route::get('/', function () {
     //return view('welcome');
     return Inertia::render('Welcome');
 });
-Route::get('hello', function () {
+/*Route::get('hello', function () {
     return Inertia::render('Wel');
-});
+});*/

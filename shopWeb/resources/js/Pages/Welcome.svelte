@@ -2,6 +2,12 @@
     import 'bootstrap/dist/css/bootstrap.min.css';
     //import './app.scss'
     let user = "1";
+
+    //自動輪播
+    /*$('.carousel').carousel({
+        interval: 2000,
+        wrap:false
+    })*/
 </script>
 
 <svelte:head>
@@ -111,7 +117,7 @@
             </div>
         </nav>
     </div>
-    <div class="container">
+    <div class="container carousel-background">
         <div class="carousel slide" id="ADcarousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#ADcarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -141,7 +147,6 @@
     </div>
 </div>
 
-<style type="text/scss">
-    @import "./resources/css/app.scss";
+<style>
 </style>
 
