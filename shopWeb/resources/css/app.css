@@ -1,3 +1,11 @@
-@tailwind base;
+/*@tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities;*/
+
+.header-cart {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    min-height: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
