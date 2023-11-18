@@ -10,12 +10,11 @@
     height:600px;
 }
 
-.header-cart {
-    display: inline-flex;
-    flex-flow: row nowrap;
-    min-height: 50px;
-    align-items: center;
-    justify-content: space-between;
+.header-nav{
+    background: rgba(0,0,0,0.4);
 }
-
+.header-user{
+    height: "100px";
+    width: "100px";
+}
 

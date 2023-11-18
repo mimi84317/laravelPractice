@@ -10,13 +10,23 @@ import Form from 'react-bootstrap/Form';
 
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
-import { BsSearch } from "react-icons/bs";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IconButton } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 
+//引用button icon
+import { BsSearch } from "react-icons/bs";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import NoticeIcon from '@rsuite/icons/Notice';
+
+
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+import '/resources/css/InderHeaderScss.scss';
+
 const IndexHeader = () => {
-    const user = "1";
+    //const user = "1";
 
     return (
         <header>
@@ -36,14 +46,17 @@ const IndexHeader = () => {
                         </div>
                     </Col>
                     <Col>
-                        <IndexUserControl user="1"/>
-                    </Col>
-                    <Col>
-                        <div>
-                            <Button className="header-cart" variant="outline-primary">
-                                <AiOutlineShoppingCart /> 購物車
-                            </Button>{' '}
-                        </div>
+                        <Navbar expand="lg" className="bg-body-tertiary header-nav" >
+                            <Container>
+                                <IndexUserControl user="1"/>
+                                <div>
+                                    <IconButton icon={<NoticeIcon size={20}/>} className='header-notice'/>{' '}
+                                </div>
+                                <div>
+                                    <IconButton icon={<AiOutlineShoppingCart size={20}/>} className='header-cart'/>{' '}
+                                </div>
+                            </Container>
+                        </Navbar>
                     </Col>
                 </Row>
             </Container>
@@ -63,7 +76,27 @@ const IndexHeader = () => {
     else{
         return(
             <div>
-                <h1>hello</h1>
+                <Navbar expand="lg" className="bg-body-tertiary">
+                    <Container>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="me-auto">
+                                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.2">
+                                        Another action
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                    <NavDropdown.Divider />
+                                    <NavDropdown.Item href="#action/3.4">
+                                        Separated link
+                                    </NavDropdown.Item>
+                                </NavDropdown>
+                            </Nav>
+
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
             </div>
         );
     }
