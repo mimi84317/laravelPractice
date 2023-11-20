@@ -48,7 +48,7 @@ const IndexHeader = () => {
                     <Col>
                         <Navbar expand="lg" className="bg-body-tertiary header-nav" >
                             <Container>
-                                <IndexUserControl user="1"/>
+                                <IndexUserControl user="" />
                                 <div>
                                     <IconButton icon={<NoticeIcon size={20}/>} className='header-notice'/>{' '}
                                 </div>
@@ -76,7 +76,7 @@ const IndexHeader = () => {
     else{
         return(
             <div>
-                <Navbar expand="lg" className="bg-body-tertiary">
+                { /*<Navbar expand="lg" className="bg-body-tertiary">
                     <Container>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
@@ -96,7 +96,8 @@ const IndexHeader = () => {
 
                         </Navbar.Collapse>
                     </Container>
-                </Navbar>
+                </Navbar>*/ }
+                <h1>hello</h1>
             </div>
         );
     }
