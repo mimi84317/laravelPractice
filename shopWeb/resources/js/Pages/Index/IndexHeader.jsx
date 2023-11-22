@@ -48,7 +48,7 @@ const IndexHeader = () => {
                     <Col>
                         <Navbar expand="lg" className="bg-body-tertiary header-nav" >
                             <Container>
-                                <IndexUserControl user="" />
+                                <IndexUserControl />
                                 <div>
                                     <IconButton icon={<NoticeIcon size={20}/>} className='header-notice'/>{' '}
                                 </div>
@@ -64,8 +64,9 @@ const IndexHeader = () => {
     );
   };
 
-  function IndexUserControl(user){
-    if({user} == ""){
+  function IndexUserControl(){
+    const user = "";
+    if(user == ""){
         return(
             <div>
                 <Button className="header-login" variant="outline-primary">登入</Button>
