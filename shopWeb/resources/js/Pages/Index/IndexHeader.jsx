@@ -16,12 +16,16 @@ import "rsuite/dist/rsuite.min.css";
 //引用button icon
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { FcGoogle  } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa6";
 import NoticeIcon from '@rsuite/icons/Notice';
 
 
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+
+import Modal from 'react-bootstrap/Modal';
 
 import '/resources/css/InderHeaderScss.scss';
 
@@ -66,11 +70,35 @@ const IndexHeader = () => {
 
   function IndexUserControl(){
     const user = "";
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     if(user == ""){
         return(
             <div>
-                <Button className="header-login" variant="outline-primary">登入</Button>
-                <Button className="header-register" variant="outline-primary">註冊</Button>
+                { /*<Button href={route('login')} target="" onClick={() => onClickOpenVacancy(id)} variant="outline-primary">登入/註冊</Button>*/ }
+                <>
+                    <Button variant="outline-primary" onClick={handleShow}>登入/註冊</Button>
+
+                    <Modal
+                        show={show}
+                        onHide={handleClose}
+                        backdrop="static"
+                        keyboard={false}
+                    >
+                        <Modal.Header closeButton>
+                            <Modal.Title>登入/註冊</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <div className="d-grid gap-2">
+                                <Button variant="outline-primary" size='lg' onClick=""><FcGoogle /> 使用Google繼續</Button>
+                                <Button variant="outline-primary" size='lg' onClick=""><FaFacebook /> 使用Facebook繼續</Button>
+                            </div>
+                        </Modal.Body>
+                    </Modal>
+                </>
             </div>
         );
     }
@@ -104,6 +132,12 @@ const IndexHeader = () => {
     }
 
 }
+
+/*function getLoginPage(){
+    return(
+
+    );
+}*/
 
 export default IndexHeader;
 
