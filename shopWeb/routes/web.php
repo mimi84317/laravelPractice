@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\SocialiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,10 +28,20 @@ use Inertia\Inertia;
 
 Route::get('/index', function () {
     return Inertia::render('Index/IndexHome');
+})->name('IndexHome');
+
+/*Route::get('google',function(){
+    return view('googleAuth');
 });
-Route::get('/login', function () {
+Route::get('auth/google', 'AuthLoginController@redirectToGoogle');
+Route::get('auth/google/callback', 'AuthLoginController@handleGoogleCallback');*/
+
+/*Route::get('/login', function () {
     return Inertia::render('Auth/Login');
-});
+});*/
+
+Route::get('/google/auth', [SocialiteController::class, 'redirectToProvider'])->name('googleLogin');
+Route::get('/google/auth/callback', [SocialiteController::class, 'handleProviderCallback']);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

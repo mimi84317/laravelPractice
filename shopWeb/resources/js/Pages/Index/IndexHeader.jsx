@@ -18,6 +18,7 @@ import { BsSearch } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FcGoogle  } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa6";
+import { FaLine } from "react-icons/fa6";
 import NoticeIcon from '@rsuite/icons/Notice';
 
 
@@ -38,7 +39,9 @@ const IndexHeader = () => {
                 <Row className="align-items-center">
                     <Col className="header-logo" xs={3}>
                         <div>
-                            <Image src="../img/logo.png" />
+                            <a href={route('IndexHome')}>
+                                <Image src="../img/logo.png" />
+                            </a>
                         </div>
                     </Col>
                     <Col className="header-search" xs={6}>
@@ -93,8 +96,9 @@ const IndexHeader = () => {
                         </Modal.Header>
                         <Modal.Body>
                             <div className="d-grid gap-2">
-                                <Button variant="outline-primary" size='lg' onClick=""><FcGoogle /> 使用Google繼續</Button>
+                                <Button variant="outline-primary" href={route('googleLogin')} target="" onClick={() => onClickOpenVacancy(id)}><FcGoogle /> 使用Google繼續</Button>
                                 <Button variant="outline-primary" size='lg' onClick=""><FaFacebook /> 使用Facebook繼續</Button>
+                                <Button variant="outline-success" size='lg' onClick=""><FaLine /> 使用Line繼續</Button>
                             </div>
                         </Modal.Body>
                     </Modal>
